@@ -19,7 +19,7 @@ read -p "Enter your desired password (again): " pw2
 
 if [ X"$pw1" = X"$pw2" ]
 then
-    sudo raspi-config nonint do_wifi_country US
+    sudo raspi-config nonint do_wifi_country GR
     sudo apt-get install dnsmasq hostapd -y
     sudo DEBIAN_FRONTEND=noninteractive apt-get install -y netfilter-persistent iptables-persistent
     sudo sed -i '$ainterface wlan0\nstatic ip_address=10.20.1.1/24\nnohook wpa_supplicant' /etc/dhcpcd.conf
